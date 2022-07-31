@@ -215,7 +215,7 @@ fig1=mc.Chart(points_for_plot=[{'x':time,'y':res_t_oil_in,'label':'t_oil_in','ls
                                {'x':time,'y':res_t_water_in,'label':'t_water_in','ls':'dashed','c':'blue'},{'x':time,'y':res_t_water_out,'label':'t_water_out','c':'blue'}],xlabel='time, s',ylabel='temperature, C', dpi=150,figure_size=(5,5))
 fig1.add_chart(points_for_plot=[{'x':time,'y':res_G_oil,'label':'G_oil','c':'red'},{'x':time,'y':res_G_water,'label':'G_water','c':'blue'}],xlabel='time, s',ylabel='Massflow, kg/s',)
 
-print(res_t_water_in_tube)
+
 for (time1,dist_temp_oil), (time2,dist_temp_water) in zip(res_t_oil_in_tube.items(), res_t_water_in_tube.items()):
     mc.Chart(points_for_plot=[{'x': dist_temp_oil[0], 'y':dist_temp_oil[1], 'label': f'Oil: time={time1}','c':'red'}, {'x': dist_temp_water[0], 'y':dist_temp_water[1], 'label': f'Water: time={time2}','c':'blue'}, ],
              xlabel='length of tube, m', ylabel='temperature, C',title=f'Time={time1}s', dpi=150, figure_size=(5, 5))
